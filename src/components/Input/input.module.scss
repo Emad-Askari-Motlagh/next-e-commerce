@@ -1,0 +1,39 @@
+.container{
+  width: 100%;
+
+label{
+ display: flex;
+ justify-content: left;
+ align-items: center;
+ margin-left: 2%;
+}
+.input {
+  padding: 18px;
+  background-color: #f6f6f6;
+  border: 2px solid #f6f6f6;
+  border-radius: 16px;
+  font-size: 16px;
+  color: #000000;
+  margin: 10px 0;
+  width: 100%;
+height: 1em;
+
+  &:hover {
+    background-color: #f6f6f655;
+  }
+
+  &::placeholder {
+    color: grey;
+  }
+}
+}
+@media (max-width: 800px){
+  .container{
+    width: 90%;
+    margin: auto;
+    .input{
+      margin:5px;
+      }
+  }
+
+}

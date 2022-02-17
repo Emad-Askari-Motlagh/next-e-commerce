@@ -1,0 +1,107 @@
+@import "../../../styles/breakpoints.scss";
+/*font-family: 'RocknRoll One', sans-serif;*/
+@import "../../../styles/fonts.scss";
+.suggestion_Container {
+  left: 0;
+  top: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  background: #8e9eaba4; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #eef2f3,
+    #8e9eab
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #eef2f3be,
+    #373a3dcb
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  border-radius: 5px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  .searchIcon {
+    font-size: 2rem;
+    color: rgba(128, 128, 128, 0.596);
+    left: 0;
+    z-index: 2;
+    margin-left: 1%;
+    margin-top: 3px;
+  }
+  .suggestion_li {
+    display: flex;
+
+    margin: 4px 0px;
+
+    border-radius: 4px;
+    .searchIcon {
+      margin-right: 10px;
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+    }
+    .suggestionLabel {
+      font-family: "Audiowide";
+      font-weight: 700;
+      font-size: 22px;
+      color: #001f3f;
+
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+        filter: brightness(120%);
+      }
+      @include sm {
+        font-size: 0.7rem;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.search_input_div {
+  border-radius: 7px;
+  margin: auto;
+  background: #8e9eab; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #eef2f3,
+    #8e9eab
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #eef2f3,
+    #8e9eab
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.shop_form {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  height: max-content;
+}
+.shop_input {
+  width: 100%;
+  border-radius: 7px;
+  height: 40px;
+  padding-left: 5%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.cearIcon {
+  position: absolute;
+  right: 1%;
+  top: 25%;
+}
+
+.shop_h3 {
+  font-size: 2vw;
+}

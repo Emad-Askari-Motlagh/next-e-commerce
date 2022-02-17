@@ -1,0 +1,49 @@
+@import '../../../styles/breakpoints.scss';
+
+.sell_image_container{
+  display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+      gap: 10px;
+  height: max-content;
+  min-height: 150px;
+  border: 1px dashed rgba(51, 65, 64, 0.486);
+  justify-content: center;
+  margin-top: 2%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 10px;
+margin: 20px;
+  @include md{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+gap: 2px;
+
+  }
+  .image_outer_div{
+    display: flex;
+      align-items: center;
+      margin: 0px;
+      position: relative;
+      margin: auto;
+       height: fit-content;
+       border-radius: 7px;
+       overflow-x: scroll;
+
+       @include md{
+        justify-content: center;
+       }
+    }
+    .deleteImageIcon{
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    z-index: 10;
+    &:hover{
+
+
+       border-radius: 10%;
+       transform: scale(1.1);
+    }
+    }
+}

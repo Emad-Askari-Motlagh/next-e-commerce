@@ -1,0 +1,206 @@
+@import "../../../styles/breakpoints.scss";
+/*font-family: 'Playfair Display', serif*/
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Nerko+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&family=Montserrat&family=Nerko+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&family=East+Sea+Dokdo&family=Montserrat&family=Nerko+One&display=swap");
+
+.pagetwocontainer {
+  position: relative;
+  background: #00c8ff60; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #0073ff1a,
+    #00c8ff41
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0073ff1a,
+    #00c8ff41
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  background-blend-mode: screen;
+
+
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+.firstDiv {
+  display: flex;
+  flex-direction: row;
+}
+.pagetwocontainer h5 {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  font-family: "Playfair Display", serif;
+  font-size: 1.1vw;
+  margin-bottom: 12px;
+}
+.page_two_ul {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-columns: 40% 40vw;
+  width: 40%;
+  margin-top: 10px;
+  margin-right: auto;
+  margin-top: 2vw;
+  flex-grow: 2;
+}
+.signup_form {
+  margin-top: 2%;
+  margin-right: 10vw;
+  display: flex;
+  flex-direction: column;
+}
+.signup_form div {
+  border-bottom: 1px solid black;
+  height: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.signup_form input {
+  padding-left: 0.2rem;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  background-color: transparent;
+  border-spacing: 22px;
+  border-width: 0px;
+  border-spacing: 4rem;
+  min-width: 20vw;
+  height: 2rem;
+  font-size: 12px;
+}
+.signup_form input::placeholder {
+  color: rgba(20, 18, 18, 0.5);
+}
+.signup_form button {
+  background-color: coral;
+  border-radius: 6px;
+  width: max-content;
+  margin-right: auto;
+  border-width: 1px;
+  box-shadow: 1px 2px 0 0 rgba(0, 0, 0, 0.233);
+  font-size: 18px;
+  padding: 4px 19px;
+  margin-bottom: 10px;
+  transition: all 0.1s ease-in;
+  @include md {
+    font-size: 12px;
+    padding: 2px 12px;
+  }
+}
+.signup_form button:hover {
+  background-color: rgb(139, 102, 148);
+  border-radius: 6px;
+  transform: scale(1.04);
+  margin-right: auto;
+  border-width: 1px;
+}
+
+.page_two_ul li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 67%;
+  color: rgb(29, 26, 36);
+  list-style: none;
+  cursor: pointer;
+  font-weight: 700;
+  @include sm {
+    font-size: 50%;
+  }
+}
+
+.ll {
+  width: 30vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  margin: auto;
+  font-size: 1vw;
+  cursor: pointer;
+}
+
+.ll * {
+  margin: 0 10px;
+}
+.term {
+  border: 1px dashed grey;
+  cursor: pointer;
+  color: rgb(38, 46, 45);
+  border-radius: 12px;
+  padding: 0px 22px;
+  text-decoration: none;
+}
+.companyDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 12px;
+  width: 100%;
+
+  margin: auto;
+  padding: 6px;
+  margin-top: 14px;
+  background-image: linear-gradient(
+    to right,
+    #ff8177 0%,
+    #ff867a 0%,
+    #ff8c7f 21%,
+    #f99185 52%,
+    tomato 78%,
+    tomato 100%
+  );
+}
+.companyDiv h5 {
+  font-size: 1vw;
+  background-color: rgba(216, 191, 216, 0.151);
+}
+
+@media (orientation: portrait) {
+  .pagetwocontainer {
+    border-top: 1px solid snow;
+    position: relative;
+
+    background-blend-mode: screen;
+    border-image: url("/back.jpg") 30;
+    border-width: 14px 0 0 0;
+  }
+  .pagetwocontainer h5 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+
+    font-size: 10%;
+    margin-bottom: 12px;
+  }
+
+  .ll {
+    width: 30vh;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin: auto;
+    font-size: 16px;
+  }
+  .ll * {
+    margin: 0 10px;
+  }
+  .companyDiv {
+    display: flex;
+    flex-direction: column;
+
+    border-top: 2px solid black;
+  }
+
+  .companyDiv h5 {
+    font-size: 3vw;
+  }
+}

@@ -1,0 +1,15 @@
+@import "../../../styles/breakpoints.scss";
+.container {
+  hr {
+    color: #f6f6f655;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+}
+
+@media (orientation: portrait) {
+  .main {
+    flex-direction: column;
+  }
+}

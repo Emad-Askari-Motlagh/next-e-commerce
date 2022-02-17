@@ -1,0 +1,44 @@
+@import "../../../styles/breakpoints.scss";
+
+.container {
+  padding: 18px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+
+  border: 2px solid #f2f2f2;
+  border-radius: 7px;
+  width: 40%;
+  display: flex;
+  align-items: center;
+cursor: pointer;
+margin: 0 20px;
+.fill{
+
+  overflow: visible;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+  @include md {
+
+
+
+  }
+
+  .counter {
+    background-color: black;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 500;
+    border-radius: 100%;
+
+  }
+
+  .text {
+    margin-left: 20px;
+  }
+}

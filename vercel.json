@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "env": {
+  },
+  "builds": [
+    {
+      "src": "server/server.mjs",
+      "use": "@vercel/node",
+      "config": { "includeFiles": ["server/build/**"] }
+    }
+
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "server/build/index.js"
+    }
+
+  ]
+}

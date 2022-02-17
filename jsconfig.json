@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/icons/*": ["src/components/icons/*"],
+      "@/actions/*": ["src/store/actions/*"],
+      "@/components/*": ["src/components/*"],
+      "@/screens/*": ["src/screens/*"],
+      "@/db/*": ["db/*"],
+      "@/store/*": ["src/store/*"],
+      "@/public/*": ["public/*"],
+      "@/hooks/*": ["hooks/*"]
+    }
+  },
+
+  "exclude": ["node_modules"]
+}

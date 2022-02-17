@@ -1,0 +1,284 @@
+@import '../../../styles/breakpoints.scss';
+@mixin after {
+  &:after {
+    content: ""; /* This is necessary for the pseudo element to work. */
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 80%; /* Change this to whatever width you want. */
+     /* This creates some space between the element and the border. */
+  right: 0;
+
+    border-radius: 6px;
+    margin-bottom: 2px;
+    position: absolute;
+    bottom: -10px;
+
+  }
+}
+.sell_form{
+  display:flex;
+  flex-direction: column;
+  width: 70%;
+  margin: auto;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  flex: auto;
+ padding-bottom: 166px;
+}
+
+
+.input_dives {
+display: flex;
+justify-content: center;
+position: relative;
+
+@include after()
+
+}
+.inputes_Contents{
+  width: 100%;
+
+}
+.input_dives_textarea {
+  display: flex;
+  justify-content: center;
+align-items: center;
+margin: auto;
+width: 100%;
+    }
+
+
+.input_dives label{
+  display: inline-flex;
+  min-width: 30%;
+  color: white;
+  justify-content: center;
+  margin: auto;
+  border-radius: 17px;
+  border-bottom-right-radius: 0;
+  border-bottom: 1px solid blueviolet;
+  font-size: 66%;
+  padding: 8px 7px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  margin-right: 3%;
+
+
+    }
+    .inputfile {
+      width: 0.1px;
+      height: 0.1px;
+      overflow: visible;
+      position: absolute;
+      z-index: -1;
+      &:hover{
+        transform: scale(1.1);
+        background-color: tomato;
+      }
+
+    }
+
+    .input_dives_textarea label{
+      display: inline-flex;
+      padding: 3px 7px;
+      min-width: 30%;
+      background-color: rgba(0, 0, 0, 0.541);
+    justify-content: center;
+      margin: auto;
+      border-radius: 17px;
+      border-bottom-right-radius: 0;
+      border-bottom: 1px solid blueviolet;
+      font-size: 70%;
+     position: relative;
+     bottom: 74px;
+     padding: 8px 7px;
+     margin-right: 3%;
+     color: white;
+     -webkit-backdrop-filter: blur(15px);
+backdrop-filter: blur(12px);
+        }
+        .input_dives_file{
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+          border-radius: 2px;
+          cursor: pointer;
+          justify-content: center;
+          margin: auto;
+          margin-top: 12px;
+          padding: 5px 10px;
+          border-radius: 5px;
+      background-color: #667292;
+      color: whitesmoke;
+      transition: transform 0.1s ease-in;
+      &:hover{
+        background-color: #7a94dd;
+        transform: scale(1.1);
+      }
+        }
+.form_submit{
+width: 30vw;
+margin: auto;
+margin-top: 22px;
+box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.category_name{
+margin: auto;
+text-align: center;
+padding: 10px 2px;
+font-weight: 900;
+font-size: 20px;
+}
+.modal_container{
+width: 40%;
+height: 70%;
+margin: auto;
+margin-top: 10%;
+background-color: darkgrey;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+border-width: 1px;
+margin-top: 40px;
+}
+.modal_container{
+
+*{
+margin-left: 40px;
+
+}
+.modal_dropdown{
+  margin-left: 0;
+}
+
+}
+
+.modal{
+align-self: flex-start;
+margin: 22px 0;
+width: 80%;
+
+}
+.sell_inputs{
+margin: 12px 0px;
+border-radius: 5px;
+height: 39px;
+width: 40vw;
+padding-left: 1%;
+border-width: 1px;
+box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.sell_inputs_textarea{
+  padding: 18px;
+  background-color: #f6f6f6;
+  border: 2px solid #f6f6f6;
+  border-radius: 16px;
+  font-size: 16px;
+  color: black;
+  margin: 20px;
+  width: 100%;
+height: 1em;
+min-height: 200px;
+}
+.modal_button{
+  width: 60%;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+@media (orientation: portrait) {
+  .mainContainer{
+    margin: 0;
+    border-radius: 0;
+  }
+.sell_image_container{
+min-height: 70px;
+}
+  .modal{
+ display: flex;
+ justify-content: flex-start;
+width: 60%;
+margin-left: 26px;
+
+  }
+  .sell_inputs{
+
+    border-radius: 5px;
+    height: 39px;
+    width: 90%;
+  margin: auto;
+ border-width: 1px;
+ padding-left: 0.5em;
+ box-shadow: 2px 2px 2px 2px  rgba(0, 0, 0, 0.103);
+      }
+  .sell_form{
+      display:flex;
+      flex-direction: column;
+      width: 100%;
+
+      margin: auto;
+      justify-content: center;
+      align-content: center;
+      align-self: center;
+
+
+    }
+  .input_dives {
+   display: flex;
+   flex-direction: column;
+    justify-content: center;
+
+      }
+      .input_dives label {
+        position: initial;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin: auto;
+        margin: 2% auto;
+        font-size: 0.7em;
+background-color: initial;
+color: black;
+border-radius: 3px;
+box-shadow: initial;
+           }
+           .inputes_Contents{
+             width: 90%;
+             margin: auto;
+
+           }
+      .input_dives_textarea {
+
+      flex-direction: column;
+margin: auto;
+
+
+
+          }
+
+          .input_dives_textarea label{
+     position: initial;
+     display: flex;
+     justify-content: center;
+     align-content: center;
+     margin: auto;
+     margin: 2% auto;
+     background-color: initial;
+
+     font-size: 0.7em;
+     color: black;
+border-radius: 3px;
+}
+.input_dives_file{
+box-shadow: 0px 2px 2px 1px  rgba(110, 75, 75, 0.671);
+}
+
+.form_submit{
+  width: 90vw;
+  margin: auto;
+  margin-top: 22px;
+}
+
+.modal{
+  justify-content: center;
+  margin: auto;
+  padding-left: 0;
+  width: 80%;
+
+}
+}

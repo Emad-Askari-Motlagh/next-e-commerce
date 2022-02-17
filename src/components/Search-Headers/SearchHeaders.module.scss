@@ -1,0 +1,39 @@
+@import '../../../styles/breakpoints.scss';
+
+.header {
+  display: flex;
+flex-direction: column;
+
+  .filtersHeaders{
+display: flex;
+margin-right: auto;
+  }
+  .title {
+    font-size: 12px;
+position: relative;
+
+    z-index: 1;
+margin-left: 5%;
+    .emoji {
+      font-weight: 400;
+      font-family: apple color emoji, segoe ui emoji, noto color emoji,
+        android emoji, emojisymbols, emojione mozilla, twemoji mozilla,
+        segoe ui symbol;
+
+    }
+  }
+  .headerButtons {
+    display: flex;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 12px;
+width: 100%;
+margin-bottom: 5px;
+
+    @include md {
+
+      margin-top: 0px;
+    }
+  }
+
+}

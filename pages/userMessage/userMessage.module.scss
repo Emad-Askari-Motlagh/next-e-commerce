@@ -1,0 +1,108 @@
+/* Chat containers */
+.main_container {
+  margin: 10vw 15vw;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(80, 71, 60, 0.288);
+  justify-content: center;
+  margin-top: 4vw;
+}
+
+.home_button {
+  width: 20%;
+
+  margin-bottom: 44px;
+}
+
+/* Style time text */
+.message_share_container {
+  min-height: calc(1.2rem + 0.7vw + 1.6vh);
+  box-sizing: border-box;
+  width: max-content;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+  min-width: 20vw;
+}
+.messages_container {
+  position: relative;
+  left: 5vw;
+  background-color: lightslategray;
+  margin-left: 122px;
+  margin-left: 44px;
+}
+
+.messages_innerDiv {
+  border-radius: 2px;
+  line-height: 1rem;
+  display: flex;
+  flex-direction: column;
+  display: inline-block;
+  align-self: flex-start;
+  padding: 1vw;
+}
+.userName {
+  font-size: 12px;
+  border-bottom-right-radius: 0px;
+  background-color: rgba(245, 222, 179, 0.034);
+  margin: auto;
+  float: left;
+  margin-right: 12px;
+  position: absolute;
+  left: 0;
+  top: 25%;
+  color: wheat;
+}
+.innerDiv {
+  width: 100%;
+  border-top-left-radius: 0px;
+  font-size: 1vw;
+}
+.messages_container1 {
+  right: 5vw;
+  margin-right: 44px;
+  display: flex;
+  align-self: flex-end;
+  background-color: gainsboro;
+  padding: 1vw;
+}
+.messages_innerDiv1 {
+  border-radius: 2px;
+  line-height: 1rem;
+  justify-content: center;
+  align-self: flex-start;
+  max-width: 20vw;
+}
+
+.innerDiv1 {
+  width: 100%;
+  margin-left: 12px;
+  border-top-left-radius: 0px;
+  font-size: 1vw;
+  background-color: transparent;
+  text-align: center;
+  margin: auto;
+}
+.inner_container {
+  background-color: rgba(126, 141, 138, 0.287);
+}
+.userName1 {
+  font-size: 12px;
+  background-color: rgba(245, 222, 179, 0.034);
+  border-bottom-left-radius: 0px;
+  margin-left: auto;
+  justify-content: center;
+  align-items: center;
+  color: wheat;
+  float: right;
+
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin: auto;
+}
+@media (orientation: portrait) {
+  .main_container {
+    margin: 0;
+  }
+}

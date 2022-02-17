@@ -1,0 +1,138 @@
+.container {
+
+  display: flex;
+  height: max-content;
+  flex-direction: row;
+  align-items: center;
+  justify-self: center;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  padding: 10px;
+  direction: initial;
+  position: relative;
+  background-color: rgba(245, 245, 220, 0.473);
+  cursor: pointer;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+margin: 20px;
+  transition: box-shadow 300ms ease-in-out;
+  -webkit-transition: box-shadow 300ms ease-in-out;
+  -moz-transition: box-shadow 300ms ease-in-out;
+  -ms-transition: box-shadow 300ms ease-in-out;
+  -o-transition: box-shadow 300ms ease-in-out;
+
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    .brandText {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    h4 {
+      margin-top: 0px;
+      z-index: 1;
+      text-shadow: 2px 2px #00000022;
+      font-size: 14px;
+      text-align: center;
+      line-height: 21px;
+    }
+
+    span {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .priceContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .discount {
+
+        border-radius: 4px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        color: rgb(212, 42, 42);
+        font-weight: bold;
+        margin-right: 10px;
+      }
+      .prices {
+        display: flex;
+        flex-direction: column;
+        .priceText {
+          text-decoration: line-through;
+          color: grey;
+          font-weight: bold;
+          text-align: left;
+        }
+        .salePriceText {
+          font-size: 20px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    .imageContainer {
+      transform: scale(1.03);
+    }
+  }
+
+  .imageContainer {
+
+
+    margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
+margin: auto;
+
+
+
+    img {
+      object-fit: contain;
+      width: 200px;
+
+
+    }
+  }
+
+  .bgImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+  }
+
+  .favContainer {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 20px;
+    right: 20px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+    border: 0;
+    z-index: 10;
+
+    svg {
+      z-index: -1;
+    }
+  }
+}

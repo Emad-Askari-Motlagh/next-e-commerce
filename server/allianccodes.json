@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "allianccodes",
+  "private_key_id": "cdb491f94323ddfda4fa7f47b8a984db6321a79a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCgdaNFUyCjEPos\nN8aylAx/sgh9JglR0iLb7qIIKq49HaVk7V3YaGg9gSxfZy5Ou7Us18KZrH/VW4+r\nVfgZSMda1nIk+USA8KFHUETUHkivHZvDTdBxFPYxdD0I8oRARvhnprXeWaj2LOqf\nIgOKQ7g/BUyLg/lFbiZKwNHjFcQKVONiRDWIlEgXySVoxTP6sISvECeeuoyfX1k5\nRKNedrfu1kQf+DlCY8WNqdrKkVNRbrDJBW4UlxIeIRgprEOz1Vj6MHKWrPdKoxTF\nD0bIbNKD58n0pAcRwQnLQps6qLYawDhtHrY6KbBNd4gMKBoUlmsSlsp3hxAtzwk/\nRpRZPnhBAgMBAAECggEAB6hFf9/tLUr4nVaWEVyWUhu1Yv+HL1PnXPaA3gHnabw5\n8dyP/21QGCtLakwaviAgD8FGJJ5CRXTGoOcL3W0HMnMMZG5O0hZpo+UVO8gsMMsp\nbUMP4O2eqBKDfSNRo12fqhafFDrUINdY5PozEAyWRM+kbP4BzcnpYuTbv0oBHnsG\nORhU7GBLr7aYflHKV6IiBMjCN6nwx6psbiSmj5XmqIpUakhAeETrR9My+q7/W2Kl\ngFZFpZtJMKzsmQloua8BJuV+mA3e4+tKzwDLRMj0QJ0/n3ypU2h3oIjhlkwl5rUT\ncZcc3XqJB+cu2wiNviL463gpEGnhPbtfNCAIMmnWgQKBgQDSovh5O/eG4QxxqNnl\ni2P2p+bSxkpToes/ewWdluuuOpCEZfRRva4ZKPZIMp/uORji1J07bhR4tnXJjKgm\nmlj2hNawNL0tytXAFjfEq1m5gVki08F/QH3dEL5Y/PIjqlk0EHQjyCwHz7ZoJYu4\n9PMnYlFTtBInGkWEUB9U9g2QkQKBgQDDBED4XQwSXzDrLBERqf2idRw8DMV6i/yL\nT5J/WuJly5oaiPiBhqRwX8A8NKfDcSWkdLEMuIYNw6oOkLzBiaYP4BOxT9mG9/2Q\nvXHIIjaUHRP5dG9gZhdBw9jtYl1gEcfMMjhZBFBfEqFYCQnBXnGIffcV4fO7OogX\nk6les4dEsQKBgQDMqJZeTTrDLdUGdnZIxzf4h8kJ0KqVOgU2J9Ub+nDCV5rlWZ6a\n8X7AaYFqQu4L7CRW+RhQjzOK2lX14BndcCiyVf23NXb+kE9BlRTYnVjPmnM+GJuw\nhbwFWGhqVFL8/l4v7TC7N5o4eMSVyq1Ip4++G5RDjPn6TldvKN5Ykb46UQKBgCT2\nu3HYAR/CVz1cHuggNmkClZV0PkIaIoYtUPE+wsbUrqL071VtteFu5LsEp//NhHsF\ne0GUACS/v43/NSfh9U3xBQqIvgxtGOzEW7q5cWrlkBGqVioJb8MRYh6slFJPTHWR\n10hYHvvGRjqvi9/RDOf4KEtHhrEoSP9fB61hjfQhAoGBAJOKS1PXmB7eshO4sfjU\nQMoaVRkbAvVmwT+VNZ3tNVKcD5OJks9fWozNUxew+bukV1NMeVIPeb8gIF0RXym8\nK7X/CH1M2YQ/nhkUnYI7+rfP1WpwmVFT1XEBGL6NUP9VHVyIHI8zxiZ/hO84pBhu\nUjV7PX3Six1wevL/Luher7Iz\n-----END PRIVATE KEY-----\n",
+  "client_email": "shop-next@allianccodes.iam.gserviceaccount.com",
+  "client_id": "111602768066737578196",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/shop-next%40allianccodes.iam.gserviceaccount.com"
+}

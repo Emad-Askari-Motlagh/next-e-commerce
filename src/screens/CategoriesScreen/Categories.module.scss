@@ -1,0 +1,142 @@
+@import "../../../styles/breakpoints.scss";
+
+.container {
+  display: flex;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: whitesmoke;
+  z-index: 7;
+  box-shadow: #32325d40 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+    .lottie{
+width: 80;
+height: 90;
+    }
+  .title {
+    font-size: 2vw;
+     font-weight: 900;
+     text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+@include md{
+  font-size: 3vw;
+
+}
+  }
+  .categoryName{
+    font-size: 90%;
+  }
+  .categories {
+    display: flex;
+    flex-direction: row;
+justify-content: center;
+align-items: center;
+padding-top: 0.6em;
+overflow-x: scroll;
+overflow-y: hidden;
+
+    &::-webkit-scrollbar {
+
+      height: 6px;
+      padding: 0;
+      margin: 0;
+      background: tomato; /* Optional: just make scrollbar invisible */
+      @include sm{
+        height: 2px;
+      }
+
+
+
+    }
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: gray;
+
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: tomato;
+      outline: 2px solid white;
+     &:hover {
+        background: #555;
+      }
+
+    }
+
+    .categoryItem {
+      display: flex;
+      align-items: center;
+      border-radius: 4%;
+margin: 0 22px;
+      cursor: pointer;
+      justify-content: center;
+@include sm{
+  margin: 0 12px;
+}
+      a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       color: black;
+        transition: all 0.1s ease-in-out;
+        text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+&:hover{
+  .emoji{
+    background-color: whitesmoke;
+  }
+  text-decoration: none;
+  transform: scale(1.05);
+  color: tomato;
+
+}
+        @include md {
+          min-width: auto;
+          flex-direction: row;
+          font-size: 10px;
+
+        }
+      }
+
+      .emoji {
+        font-weight: 400;
+        font-family: apple color emoji, segoe ui emoji, noto color emoji,
+          android emoji, emojisymbols, emojione mozilla, twemoji mozilla,
+          segoe ui symbol;
+
+        margin-bottom: 4px;
+background-color: whitesmoke;
+border-radius: 50%;
+padding: 0.1em 0.4em;
+font-size: 30px;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px ;
+border-bottom: 3px solid gray;
+
+        @include md {
+
+font-size: 24px;
+
+        }
+      }
+
+    }
+  }
+  .helpContainer {
+    display: none;
+    align-items: center;
+    position: fixed;
+    bottom: 30px;
+    margin-left: -10px;
+    z-index: -1;
+
+    @include md {
+      display: flex;
+    }
+
+    .helpIcon {
+      padding: 15px;
+      background-color: #f6f7f9;
+      display: flex;
+      border-radius: 100%;
+      margin-right: 10px;
+      transform: scaleX(-1);
+    }
+  }
+}

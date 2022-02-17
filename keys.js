@@ -1,0 +1,9 @@
+// stripeApiKey = pk_test_51IS45kH9wzUe6pYJZutyvfMCW5FtPzqtMdcQIeLOLPuaimPkyOk5k3yktb5G1uZ8bV3OsQcGV5KdlSbO4DsJgXQl00zf3uAqUh;
+// testKey = sk_test_51IS45kH9wzUe6pYJccixm8GgoOMRHmVE3uVpSUQu3p2ClfNPxYXe9TWnqjL7gZaeURIiJjlaYiNThJNPdRq4tvfA00UvevgtEv;
+
+module.exports = {
+  stripeApiKey:
+    "pk_test_51IS45kH9wzUe6pYJZutyvfMCW5FtPzqtMdcQIeLOLPuaimPkyOk5k3yktb5G1uZ8bV3OsQcGV5KdlSbO4DsJgXQl00zf3uAqUh",
+  testKey:
+    "sk_test_51IS45kH9wzUe6pYJccixm8GgoOMRHmVE3uVpSUQu3p2ClfNPxYXe9TWnqjL7gZaeURIiJjlaYiNThJNPdRq4tvfA00UvevgtEv",
+};

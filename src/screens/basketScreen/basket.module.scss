@@ -1,0 +1,49 @@
+.container {
+  width: 100%;
+
+  .main {
+    padding: 2%;
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 40px;
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+      .title {
+        font-size: 28px;
+        margin: 0;
+
+        .emoji {
+          font-weight: 400;
+          font-family: apple color emoji, segoe ui emoji, noto color emoji,
+            android emoji, emojisymbols, emojione mozilla, twemoji mozilla,
+            segoe ui symbol;
+          margin-right: 10px;
+        }
+      }
+
+      .headerButtons {
+        display: flex;
+        margin-left: auto;
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+    .payment_button {
+      background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+      border-radius: 5px;
+      border-width: 1px;
+      min-width: 10%;
+      margin: 1%;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+    .payment_button:hover {
+      background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+
+      .payment_button:active {
+        background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+      }
+    }
+  }
+}

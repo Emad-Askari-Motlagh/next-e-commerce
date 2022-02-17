@@ -1,0 +1,77 @@
+@import "../../../styles/breakpoints.scss";
+/*font-family: 'RocknRoll One', sans-serif;*/
+@import url("https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap");
+/*ffont-family: 'Akaya Kanadaka', cursive;*/
+@import url("https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=RocknRoll+One&display=swap");
+/*font-family: 'Anton', sans-serif;*/
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Chango&family=Fredoka+One&family=Syne+Mono&display=swap");
+/*font-family: 'Chango', cursive;*/
+@import url("https://fonts.googleapis.com/css2?family=Chango&family=Fredoka+One&family=Syne+Mono&display=swap");
+.suggestion_Container {
+  left: 0;
+  top: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+background-color: lightgrey;
+  border-radius: 5px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: 1px solid wheat;
+  .searchIcon {
+    font-size: 2rem;
+    color: rgba(128, 128, 128, 0.596);
+    left: 0;
+    z-index: 2;
+    margin-left: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  .suggestion_li {
+    display: flex;
+justify-content: flex-start;
+align-items: center;
+    padding: 4px 0px;
+    border-radius: 4px;
+    .searchIcon {
+      margin-right: 10px;
+
+    }
+    .suggestionLabel {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      color: #001f3f;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+        filter: brightness(120%);
+      }
+      @include sm {
+        font-size: 0.7rem;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.search_input_div {
+  border-radius: 7px;
+  margin: auto;
+background: greenyellow;
+}
+
+
+.cearIcon {
+  position: absolute;
+  right: 1%;
+  top: 25%;
+}
+
+.shop_h3 {
+  font-size: 2vw;
+}

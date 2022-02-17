@@ -1,0 +1,143 @@
+@import '../../../styles/breakpoints.scss';
+.shop_search{
+
+display: flex;
+flex-direction: column;
+  height: max-content;
+margin-bottom: 3%;
+@include md{
+  margin-bottom: 12%;
+}
+  .searchContainer {
+    display: flex;
+    align-items: center;
+    color: grey;
+    flex-grow: 1;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: gainsboro;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-top: 20px;
+    padding: 10px;
+
+    @include md {
+border-width: 0.1px;
+
+      border-radius: 5px;
+      margin-top: 12px;
+      padding: 3px;
+
+    }
+
+    form {
+      width: 100%;
+
+      .searchInput {
+        border: 0;
+        display: flex;
+        width: 100%;
+        background-color: transparent;
+        font-size: 100%;
+        flex-wrap: wrap;
+
+        &:focus{
+     outline: none;
+     border: 0.4px solid rgba(149, 64, 64, 0.158);
+     border-radius: 4px;
+        }
+        &::placeholder{
+font-size: 0.6rem;
+color: tomato;
+        }
+      }
+      @include sm{
+        width: 80%;
+
+      }
+    }
+
+    .searchIcon {
+      margin-right: 10px;
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+    }
+  }
+.shop_form{
+
+    width: 80%;
+    margin: auto;
+    display: flex;
+    position: relative;
+
+@include md{
+  width:90vw;
+  margin: auto;
+}
+.shop_h3{
+  font-size: 20px;
+  font-weight: 900;
+}
+    .searchContents{
+        display: flex;
+        position: relative;
+        width: 100%;
+        .search_iconn{
+
+          position: absolute;
+          left: 0.2em;
+          top: 0.2em;
+
+      &:hover{
+          background-color: tomato;
+          cursor: pointer;
+
+      }
+
+
+          }
+          .cearIcon{
+              position: absolute;
+              right: 0.4em;
+              top: 0.5em;
+          }
+    }
+
+
+        display: flex;
+       flex-direction: column;
+        height: 2rem;
+       height: max-content;
+
+        .shop_input{
+            border-radius: 7px;
+     width: 100%;
+          padding-left: 2em;
+     height: 2.4em;
+     margin: auto;
+          border: 1px solid rgba(0, 0, 0, 0.39);
+          border-radius:7px;
+          &:focus{
+              border-width: 0.3px;
+              outline: none;
+         zoom: unset;
+
+
+          }
+        }
+
+}
+
+
+
+
+
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+
+
+	.searchInput:focus {
+		font-size: 16px;
+	}
+}

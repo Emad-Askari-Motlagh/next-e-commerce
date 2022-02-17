@@ -1,0 +1,58 @@
+.modalContainer{
+
+  margin: 20px;
+    .selected_value{
+        margin: auto;
+        color: lightcoral;
+        background-color: lightcoral;
+
+
+    }
+    .modal_toggel{
+        background-color: rgba(89, 109, 114, 0.301);
+        backdrop-filter: blur(12px);
+        filter: blur(17px);
+
+    }
+
+    .modal_button{
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border: 2px solid gray;
+        border-radius: 20px;
+        width: 40%;
+        background-color: gray;
+        color: wheat;
+        transition: all 0.1s ease-in;
+        box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+        z-index: 10;
+
+&:hover{
+  filter: saturate(30%);
+  background-color: rgb(126, 163, 163);
+  transform: scale(1.02);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+               }
+    .modal{
+       width: 400px;
+       height: 80vh;
+      background-color: khaki;
+      margin: auto;
+
+
+
+    }
+    .modal_body{
+        background-color: lightcoral;
+    }
+}
+.selected_value{
+    color: wheat;
+    margin-top: 20%;
+
+}

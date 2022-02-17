@@ -1,0 +1,16 @@
+@import '../../../../styles/fonts.scss';
+.label{
+  font-family: 'playfair';
+  padding-left: 1em;
+
+  &:hover{
+    text-decoration: underline;
+  }
+}
+.modalBody{
+font-family: 'playfair';
+width: max-content;
+margin: auto;
+color: black;
+
+}

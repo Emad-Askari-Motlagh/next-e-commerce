@@ -1,0 +1,238 @@
+@import "./breakpoints.scss";
+@import "./fonts.scss";
+
+$main-bg-color: rgb(69, 107, 116);
+$main-box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 2px 0px,
+  rgba(252, 208, 208, 0.06) 0px 0px 2px 0px;
+$box-shadow: $main-box-shadow;
+
+@font-face {
+  font-family: "East Sea Dokdo", cursive;
+  src: url("https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&family=East+Sea+Dokdo&family=Montserrat&family=Nerko+One&display=swap")
+    format("truetype-variations");
+  font-weight: 1 999;
+}
+/*font-family: 'Audiowide', cursive;*/
+
+.containermain {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+
+  background-size: contain;
+  @include sm {
+    border-radius: initial;
+  }
+}
+.llk {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  background-size: contain;
+}
+.loading_h5 {
+  margin: auto;
+  width: max-content;
+  font-family: "Audiowide", cursive;
+  font-size: 22px;
+  margin-top: 4vw;
+}
+
+.firstImage_div {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  @include md {
+    height: 500px;
+  }
+  @include sm {
+    height: 450px;
+  }
+  @include xsm {
+    height: 400px;
+  }
+}
+.secoundImage_div {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: auto;
+  @include md {
+    height: 450px;
+  }
+  @include sm {
+    height: 300px;
+  }
+  @include xsm {
+    height: 280px;
+  }
+}
+.first_page_image1 {
+  position: relative;
+  bottom: 0;
+  bottom: 400px;
+}
+
+/*sell page style*/
+
+.sell_inputs {
+  border-inline: 12px solid black;
+  border-spacing: 22px;
+}
+/*categorys modal styles*/
+
+.mybox {
+  box-shadow: 13px 13px 6px black;
+}
+
+.descripta:hover::after {
+  transform: scaleX(1);
+  color: wheat;
+  transition: all 0.3s ease-in-out;
+}
+.moredescrbe {
+  position: absolute;
+  width: 22vw;
+  bottom: 0;
+  top: 95vw;
+  right: 12vw;
+}
+.moredescrbe h3 {
+  font-size: 2vw;
+  margin: auto;
+  text-align: center;
+}
+.moredescrbe p {
+  margin: auto;
+  text-align: justify;
+  font-size: 1vw;
+}
+
+.first_page_images_div {
+  box-shadow: 7px 7px 3px rgba(22, 22, 21, 0.315);
+  position: relative;
+  bottom: 124px;
+  justify-content: center;
+  width: 300px;
+  height: 200;
+  overflow-x: hidden;
+  position: relative;
+  right: 84px;
+  width: 20vw;
+  height: 15vw;
+}
+
+.first_page_images_div2 {
+  box-shadow: 7px 7px 3px rgba(22, 22, 21, 0.315);
+  position: relative;
+  bottom: 124px;
+  justify-content: center;
+  width: 20vw;
+  height: 15vw;
+  overflow-x: hidden;
+  position: relative;
+  left: 184px;
+}
+.category_ul {
+  border: solid blacks;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 300px;
+  justify-content: center;
+  padding-left: 0;
+  padding-right: 0;
+  animation-name: slidein_Images;
+  animation-duration: 20s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-play-state: running;
+}
+.category_ul2 {
+  background-color: tomato;
+}
+.categorys_li {
+  list-style: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin: 14px 12px;
+}
+
+@keyframes slidein_Images {
+  0% {
+    transform: translateX(0px);
+    font-family: "Lobster", cursive;
+  }
+  50% {
+    transform: translateX(100px);
+    animation-play-state: paused;
+    animation-delay: 6s;
+  }
+
+  100% {
+    transform: translateX(0);
+    animation-play-state: running;
+    animation-delay: 6s;
+  }
+}
+
+@keyframes slidein {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
+    font-family: "Lobster", cursive;
+  }
+
+  50% {
+    transform: translateX(0);
+    opacity: 1;
+    animation-play-state: paused;
+  }
+  75% {
+    transform: translateX(0);
+    opacity: 1;
+    animation-play-state: paused;
+  }
+
+  100% {
+    transform: translateX(-50px);
+    opacity: 0;
+    animation-play-state: running;
+  }
+}
+@media (min-width: 800px) and (max-width: 1024px) {
+}
+
+@media (min-width: 1024px) and (max-width: 1200px) {
+}
+@media (min-width: 1224px) and (max-width: 2800px) {
+}
+@media (max-width: 800px) {
+  .container {
+    padding-bottom: initial;
+  }
+  .descript {
+    margin-top: 10%;
+  }
+  .descript h5 {
+    margin-left: 20px;
+  }
+
+  .containermain {
+    background-size: 800px auto;
+    background-position: top;
+
+    margin: 0;
+    padding: 0;
+    padding-bottom: 0;
+    height: max-content;
+  }
+
+  .first_page_image1 {
+  }
+}
+
+@media (min-height: 1200px) {
+  .containermain {
+    overflow-y: scroll;
+  }
+}
