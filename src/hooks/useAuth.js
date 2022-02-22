@@ -11,11 +11,11 @@ import { combineReducers, initialState } from "@/store/reducers/combineReducer"
 import actionTypes from "@/store/actionTypes"
 import axios from "axios"
 import userReducer, { userState } from "@/store/reducers/userReducer"
-
+import useAsyncReducer from "./useAsyncReducer"
 export const authContext = createContext()
 
 export function AuthProvider({ children }) {
-  const [state, dispatch] = useReducer(userReducer, userState)
+  const [state, dispatch] = useAsyncReducer(userReducer, userState)
 
   return (
     <authContext.Provider value={{ state, dispatch }}>
