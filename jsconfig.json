@@ -6,10 +6,12 @@
       "@/actions/*": ["src/store/actions/*"],
       "@/components/*": ["src/components/*"],
       "@/screens/*": ["src/screens/*"],
-      "@/db/*": ["db/*"],
+      "@/db/*": ["src/utils/db/*"],
       "@/store/*": ["src/store/*"],
       "@/public/*": ["public/*"],
-      "@/hooks/*": ["hooks/*"]
+      "@/hooks/*": ["hooks/*"],
+      "@/models/*":["src/models/*"]
+
     }
   },
 

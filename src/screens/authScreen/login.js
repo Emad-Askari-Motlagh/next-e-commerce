@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import Link from "next/link"
 import styles from "./auth.module.scss"
 import { IoIosArrowRoundBack } from "react-icons/io"
-import { googleAuth, signUser, facebookAuth } from "@/actions/authActions"
+import { googleAuth, facebookAuth } from "@/actions/authActions"
 import router from "next/router"
 import { motion } from "framer-motion"
 import Header_animations from "@/components/Framer-Helpers/Header_animations"
@@ -13,7 +13,7 @@ import { useFormik } from "formik"
 import { FcGoogle } from "react-icons/fc"
 import { ImFacebook2 } from "react-icons/im"
 import Input from "@/components/Input"
-import useAuth from "src/hooks/useAuth"
+import { useProvideAuth } from "src/hooks/useAuth"
 import { GoogleLogin } from "react-google-login"
 // import * as Realm from "realm-web"
 import * as Realm from "realm-web"
@@ -28,11 +28,9 @@ const app = new RealmApp({
 
 export default function Login() {
   const [error, setError] = useState(null)
-  const dispatch = useDispatch()
 
-  const { signInError, user } = useAuth()
+  const { signInError, user, dispatch, signUser } = useProvideAuth()
   const loginWithFacebook = facebookAuth()
-
   const {
     handleChange,
     handleSubmit,
@@ -53,8 +51,13 @@ export default function Login() {
         .required("Please enter email"),
       password: yup.string().required("Please enter password"),
     }),
-    onSubmit(values) {
-      dispatch(signUser(values.email, values.password))
+    async onSubmit(values) {
+      try {
+        const data = await signUser(values.email, values.password)
+        console.log(data)
+      } catch (err) {
+        console.log(err.message)
+      }
     },
     validateOnMount: true,
   })

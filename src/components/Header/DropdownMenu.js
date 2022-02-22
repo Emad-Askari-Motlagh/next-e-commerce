@@ -7,13 +7,19 @@ import { IoIosArrowDropright } from "react-icons/io"
 import { FcAbout } from "react-icons/fc"
 import { RiContactsLine } from "react-icons/ri"
 import Simple_modal from "../helper_modals/Simple_modal"
+import { RiLogoutCircleRLine } from "react-icons/ri"
 
-export default function DropdownMenu({ isVisible, setIsVisible, elementRef }) {
+export default function DropdownMenu({
+  isVisible,
+  setIsVisible,
+  elementRef,
+  logOut,
+}) {
   return (
     <div
       className={styles.dropdown}
       style={{
-        width: isVisible ? "30vw" : "0px",
+        width: isVisible ? "30vw" : "0",
         borderWidth: isVisible ? "2px" : "0",
       }}
       ref={isVisible ? elementRef : null}
@@ -53,6 +59,22 @@ export default function DropdownMenu({ isVisible, setIsVisible, elementRef }) {
           <a rel="noopener" href={"/kontakt"} className={styles.menu_item}>
             Skriva till oss
           </a>
+        </DropDownItem>
+
+        <DropDownItem
+          leftIcon={<RiLogoutCircleRLine color="red" />}
+          rightIcon={<FiSettings color="tomato" />}
+        >
+          <button
+            style={{
+              borderWidth: 0,
+              backgroundColor: "transparent",
+              color: "white",
+            }}
+            onClick={() => logOut()}
+          >
+            Logout
+          </button>
         </DropDownItem>
       </div>
     </div>

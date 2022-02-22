@@ -1,11 +1,8 @@
 import actionTypes from "@/store/actionTypes"
-
-const categoryAction = (
-  state = {
-    filters: { location: "", category: "" },
-  },
-  action
-) => {
+export const filterState = {
+  filters: { location: "", category: "" },
+}
+const categoryAction = (state = filterState, action) => {
   switch (action.type) {
     case actionTypes.PRODUCTS_FILTERS:
       return {

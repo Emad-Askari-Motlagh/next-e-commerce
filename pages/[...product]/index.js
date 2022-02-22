@@ -1,8 +1,8 @@
 import React, { useEffect } from "react"
 import Product_Screen from "@/screens/productScreen"
 import mongoose from "mongoose"
-import dbInit from "@/db/dbInit.mjs"
-import Person from "../../server/models/productModel"
+import dbInit from "src/utils/db/dbInit.js"
+import Person from "../../src/models/productModel"
 
 export default function product({ product }) {
   return <Product_Screen product={product} />

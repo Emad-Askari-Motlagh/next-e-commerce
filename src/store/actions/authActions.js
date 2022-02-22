@@ -1,31 +1,29 @@
-import { setRegisterError } from "./errorActions"
-export default function authAction() {}
-import { parseCookies, setCookie, destroyCookie } from "nookies"
 import actionTypes from "../actionTypes"
-import Router from "next/router"
 import axios from "axios"
-import jwt from "jsonwebtoken"
 import * as Realm from "realm-web"
 
 //set token in local storage
 ////get userAction action
 
-export function getUserAction() {
-  return async (dispatch) => {
-    const { user } = parseCookies()
-    if (user) {
-      const parsedUser = jwt.decode(user, "MY_SECRET")
-      dispatch({ type: actionTypes.SIGN_USER, payload: parsedUser })
-    } else {
-      dispatch({ type: actionTypes.SIGN_USER, payload: null })
-    }
+export async function getUserAction() {
+  try {
+    const res = await axios.get(`http://localhost:3000/api/auth/user`)
+
+    return res.data
+  } catch (err) {
+    console.log(err?.message)
+    return err
   }
 }
 
 export const logOut = () => {
   return async (dispatch) => {
+    const res = await axios.get(
+      `${process.env.SERVER_LINK}/api/auth/deleteUser`
+    )
+
     dispatch({ type: actionTypes.SIGN_USER, payload: null })
-    destroyCookie(null, "user")
+    dispatch({ type: actionTypes.GET_CURRENT_USER, payload: null })
   }
 }
 
@@ -33,7 +31,7 @@ export const setUser = (username, password, name) => {
   return async (dispatch) => {
     try {
       const res = await axios.post(
-        `${process.env.SERVER_LINK}/auth/register/`,
+        `${process.env.SERVER_LINK}/api/auth/register/`,
         {
           username,
           password,
@@ -47,44 +45,24 @@ export const setUser = (username, password, name) => {
   }
 }
 
-export const signUser = (username, password) => {
-  return async (dispatch) => {
-    try {
-      const res = await axios.post(`${process.env.SERVER_LINK}/auth/login`, {
-        username,
-        password,
-      })
-
-      if (!res.data.err) {
-        const user = await jwt.decode(res.data, "MY_SECRET")
-        dispatch({ type: actionTypes.SIGN_USER, payload: user })
-        await setCookie(null, "user", res.data, {
-          maxAge: 30 * 24 * 60 * 60,
-          path: "/",
-        })
-        globalThis.location = "/"
-      } else {
-        console.log("res.data.err")
-        dispatch({
-          type: actionTypes.SIGN_USER_ERROR,
-          payload: res.data.err,
-        })
-      }
-    } catch (err) {
-      console.log(err, err?.message, err?.err, err?.data)
-      dispatch({
-        type: actionTypes.SIGN_USER_ERROR,
-        payload: err,
-      })
-    }
+export const signUser = async (username, password) => {
+  try {
+    const res = await axios.post(`${process.env.SERVER_LINK}/api/auth/login`, {
+      username,
+      password,
+    })
+    return res.data
+  } catch (err) {
+    console.log(err, err?.message, err?.err, err?.data)
+    return err
   }
 }
 
-export function delet_user(id) {
+export function delet_user() {
   return async (dispatch, getState) => {
-    await axios.post(`${process.env.SERVER_LINK}/auth/deleteUser`, { id })
+    await axios.delete(`${process.env.SERVER_LINK}/api/auth/login`)
     dispatch({ type: actionTypes.SIGN_USER, payload: null })
-    destroyCookie(null, "user")
+    dispatch({ type: actionTypes.GET_CURRENT_USER, payload: null })
   }
 }
 

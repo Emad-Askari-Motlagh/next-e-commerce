@@ -49,44 +49,76 @@ $nav-bar-margin: auto;
   }
 }
 .navbar {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  padding-right: initial;
   display: flex;
-  padding: $nav-bar-padding;
-  margin: $nav-bar-margin;
-  margin-top: 0;
+  height: 100%;
+  width: 100vw;
   align-items: center;
   justify-content: space-between;
-  height: calc($nav-size);
-  z-index: 10;
-
+position: relative;
   @include sm {
     height: 80px;
   }
-}
-.navbar_nav {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  display: flex;
+  .items_cont {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+height: $nav-size;
+padding-right: 20px;
+
+@include portrait {
   align-items: center;
-  justify-content: space-between;
-padding-right: $nav-bar-padding;
+
+}
+.navItemIcon{
+  width: 25px;
+  @include portrait {
+
+    width: 15px;
+  }
   @include md {
-    padding-right: 1%;
+    width: 17px;
+
   }
 }
+    .icons {
+      width: 15px;
+      @include portrait {
+
+        width: 15px;
+      }
+      @include md {
+        width: 17px;
+
+      }
+    }
+  }
+
+}
+
 
 .nav_item {
-  width: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 0 20px;
+  height: $nav-size;
   cursor: pointer;
   z-index: 600;
-  margin: 0 1%;
+  @include md{
+    margin: 5px;
+  }
+  .icons {
+    color: rgb(146, 28, 28);
+    transition: color 0.2s ease-in-out;
+    width: 40px;
+    &:hover {
+
+      transform: scale(1.1);
+    }
+  }
+
 }
 .nav_item h3 {
   font-size: 13px;
@@ -102,21 +134,12 @@ padding-right: $nav-bar-padding;
   color: white;
 }
 
-.nav_firstdiv {
-  display: flex;
-  flex-grow: 1;
-  max-width: 80%;
-  justify-content: flex-start;
-  align-items: flex-start;
 
-}
 .user {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  flex-grow: 2;
-
+display: flex;
+justify-content: center;
+align-items: center;
+margin: auto;
   @include sm {
     font-size: 18px;
     flex-direction: column;
@@ -138,29 +161,31 @@ padding-right: $nav-bar-padding;
   }
 }
 .logo_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+display: flex;
+justify-content: center;
+align-items: center;
+margin-right: auto;
+padding-left: 4%;
+
+
   label {
     max-width: 40px;
     font-family: "Sigmar One";
   }
   .h1_classname {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
     font-family: "Righteous";
     font-size: calc($nav-size * 0.5);
     cursor: pointer;
     height: 80px;
     width: 80px;
     color: tomato;
-    margin-left: 12%;
-    @include lg {
-      margin-left: 4px;
-      height: 40px;
-      width: 50px;
-    }
+@include md{
+  height: 60px;
+  width: 60px;
+}
+
   }
 }
 
@@ -179,19 +204,13 @@ padding-right: $nav-bar-padding;
     transform: scale(1.1);
   }
 }
-.icons {
-  color: white;
-  transition: color 0.2s ease-in-out;
-  &:hover {
 
-    transform: scale(1.1);
-  }
-}
 
 .navItem_icons {
-  font-size: 42px;
+  font-size: 22px;
   width: 30%;
   height: 30%;
+  color: red;
 }
 
 /* Dropdown Menu */
@@ -210,7 +229,7 @@ padding-right: $nav-bar-padding;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px inset;
   z-index: 30;
   border: 2px solid rgba(128, 87, 87, 0.493);
-  overflow: hidden;
+  overflow: visible;
 
 .upArrow{
   color: white;
@@ -357,25 +376,8 @@ transition: transform 0.3s ease-in;
 
 /* mobile style*/
 @media (orientation: portrait) {
-  .nav_item {
-    width: initial;
-    justify-content: center;
-    align-content: center;
-  }
-  .navbar {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    height: calc($nav-size - 10px);
-  }
 
 
-
-  .nav_firstdiv {
-    display: flex;
-    flex-grow: 1;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
 
   .menu_item .icon_button {
     margin-right: 0.1rem;

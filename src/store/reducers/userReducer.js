@@ -1,23 +1,26 @@
-import { HYDRATE } from "next-redux-wrapper"
 import actionTypes, * as types from "@/store/actionTypes"
 
-const userReducer = (
-  state = {
-    user: null,
-    createdUser: null,
-    ifLogedIn: false,
-    verified: false,
-    currentUser: { user: null, loading: false },
-    addressess: { data: [], loading: true },
-    signInError: "",
-  },
-  action
-) => {
+export const userState = {
+  user: {},
+  createdUser: null,
+  ifLogedIn: false,
+  verified: false,
+  currentUser: { user: null, loading: false },
+  addressess: { data: [], loading: true },
+  signInError: "",
+}
+
+export const userReducer = (state = userState, action) => {
   switch (action.type) {
     case actionTypes.REGISTER_USER:
       return { ...state, createdUser: action.payload }
 
     case actionTypes.SIGN_USER:
+      return {
+        ...state,
+        currentUser: action.payload,
+      }
+    case actionTypes.GET_CURRENT_USER:
       return {
         ...state,
         currentUser: action.payload,
@@ -31,18 +34,13 @@ const userReducer = (
       return {
         ...state,
         ifLogedIn: false,
-        user: action.payload,
       }
     case "VERIFY_USER":
       return {
         ...state,
         verified: action.payload,
       }
-    case "FETCH_USER":
-      return {
-        ...state,
-        currentUser: action.payload,
-      }
+
     case "GET_ADDRESSESS":
       return {
         ...state,

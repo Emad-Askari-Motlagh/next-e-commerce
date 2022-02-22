@@ -1,9 +1,9 @@
 import actionTypes from "@/store/actionTypes"
-const initialState = {
+export const cardState = {
   itemsOnCart: null,
 }
-const cartReducer = (state = initialState, action) => {
-  switch (action.type) {
+const cartReducer = (state = cardState, action) => {
+  switch (action?.type) {
     case actionTypes.BASKET_ITEM_COUNT:
       return {
         ...state,

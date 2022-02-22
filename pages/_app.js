@@ -1,18 +1,17 @@
 import "../styles/globals.scss"
 import "bootstrap/dist/css/bootstrap.min.css"
-import { Provider } from "react-redux"
 import React from "react"
 import { useRouter } from "next/router"
 import Lottie from "react-lottie-player"
 import styles from "../styles/Home.module.scss"
 import lottieJson from "../public/spiner_lottie.json"
-import { useStore } from "../src/store/store"
 import Layout from "src/components/Primary-layout"
 import { init } from "emailjs-com"
 
+import { AuthProvider } from "src/hooks/useAuth"
+
 function myApp({ Component, pageProps }) {
   const [loading, setLoading] = React.useState(false)
-  const store = useStore(pageProps.initialReduxState)
   const Router = useRouter()
 
   React.useEffect(() => {
@@ -38,7 +37,7 @@ function myApp({ Component, pageProps }) {
   }, [])
   return (
     //if  loading is false then we render whole app but before that spinner spining
-    <Provider store={store}>
+    <AuthProvider>
       {loading ? (
         <Layout>
           <div style={{ height: "100vh", width: "100vw" }}>
@@ -55,7 +54,7 @@ function myApp({ Component, pageProps }) {
       ) : (
         <Component {...pageProps} />
       )}
-    </Provider>
+    </AuthProvider>
   )
 }
 
