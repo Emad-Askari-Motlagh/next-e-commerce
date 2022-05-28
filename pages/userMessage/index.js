@@ -10,7 +10,7 @@ import {
   FormText,
 } from "react-bootstrap"
 import { useSelector } from "react-redux"
-
+import io from "socket.io-client"
 import styles from "./userMessage.module.scss"
 
 export default function UserMessage() {
@@ -24,12 +24,31 @@ export default function UserMessage() {
   useEffect(() => {
     getMessages()
   }, [])
+  useEffect(() => {
+    socket = io(connection_url, { transport: ["websocket"] })
 
+    socket.on("on-text-change", (data) => {
+      setMessages((prev) => [...prev, data])
+
+      if (showAlert) setShowAlert(false)
+      if (data.from === socket.id) setText("")
+      else setShowAlert(true)
+    })
+  }, [])
   const save_on_db = async (e) => {
     e.preventDefault()
+    socket.emit("onTextChange", {
+      text,
+      from: socket.id,
+    })
   }
   const getMessages = async () => {}
+  const buttonTriggers = ["Enter"]
+  const keyPressed = (e) => {
+    if (buttonTriggers.indexOf(e.key) >= 0) e.preventDefault()
 
+    if (e.key === "Enter") broadcastButton.current.click()
+  }
   return (
     <Card className={styles.main_container}>
       <div>
@@ -110,6 +129,7 @@ export default function UserMessage() {
           }}
           placeholder="Enter text"
           onChange={(e) => setMessage(e.target.value)}
+          onKeyDown={(e) => keyPressed(e)}
           ref={inputRef}
         />
 
