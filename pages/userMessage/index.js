@@ -28,11 +28,7 @@ export default function UserMessage() {
     socket = io(connection_url, { transport: ["websocket"] })
 
     socket.on("on-text-change", (data) => {
-      setMessages((prev) => [...prev, data])
-
-      if (showAlert) setShowAlert(false)
-      if (data.from === socket.id) setText("")
-      else setShowAlert(true)
+      setMesssetGotMessageages((prev) => [...prev, data])
     })
   }, [])
   const save_on_db = async (e) => {
