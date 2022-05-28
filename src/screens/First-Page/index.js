@@ -15,9 +15,6 @@ export const FirstPageContent = () => {
   return (
     <div className={styles.pageOne} ref={containerRef}>
       <div className={styles.categorysContainer}>
-        <button onClick={() => destroyCookie(null, "token", { path: "/" })}>
-          kk
-        </button>
         <svg
           className={styles.svgWave_down}
           xmlns="http://www.w3.org/2000/svg"

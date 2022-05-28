@@ -1,10 +1,8 @@
 import React, { useCallback, useEffect, useRef, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
 import Link from "next/link"
 import styles from "./auth.module.scss"
 import { IoIosArrowRoundBack } from "react-icons/io"
 import { googleAuth, facebookAuth } from "@/actions/authActions"
-import router from "next/router"
 import { motion } from "framer-motion"
 import Header_animations from "@/components/Framer-Helpers/Header_animations"
 import * as yup from "yup"
@@ -14,13 +12,12 @@ import { FcGoogle } from "react-icons/fc"
 import { ImFacebook2 } from "react-icons/im"
 import Input from "@/components/Input"
 import { useProvideAuth } from "src/hooks/useAuth"
-import { GoogleLogin } from "react-google-login"
 // import * as Realm from "realm-web"
 import * as Realm from "realm-web"
-import { useGoogleLogin } from "react-use-googlelogin"
 import { App as RealmApp, Credentials } from "realm-web"
 import Head from "next/head"
 import { handleAuthRedirect } from "realm-web"
+import { useRouter } from "next/router"
 // const app = new RealmApp({ id: "realmwebtestapp-ybnna" });
 const app = new RealmApp({
   id: "shopia-uosya",
@@ -28,9 +25,9 @@ const app = new RealmApp({
 
 export default function Login() {
   const [error, setError] = useState(null)
-
+  const router = useRouter()
   const { signInError, user, dispatch, signUser } = useProvideAuth()
-  const loginWithFacebook = facebookAuth()
+
   const {
     handleChange,
     handleSubmit,
@@ -52,9 +49,14 @@ export default function Login() {
       password: yup.string().required("Please enter password"),
     }),
     async onSubmit(values) {
+      console.log(values)
       try {
-        const data = await signUser(values.email, values.password)
-        console.log(data)
+        try {
+          const data = await signUser(values.email, values.password)
+          router.reload()
+        } catch (err) {
+          console.log(err)
+        }
       } catch (err) {
         console.log(err.message)
       }

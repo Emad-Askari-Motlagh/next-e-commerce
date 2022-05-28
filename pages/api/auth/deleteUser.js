@@ -1,19 +1,16 @@
-import nookies, { destroyCookie, setCookie, parseCookies } from "nookies"
-import { clearUser } from "src/utils/auth"
+import { deleteCookie } from "lib/storeCookie"
 
 const handler = async (req, res) => {
-  // const method = ctx.req.method
-
-  if (req.method === "POST") {
-    res.send("post")
-  } else {
+  if (req.method === "DELETE") {
+    // Rest of the API logic
     try {
-      clearUser(res)
-      res.send("")
+      await deleteCookie("token", res)
+      res.statues(200).send("done")
     } catch (err) {
-      console.log(err?.message)
-      res.send("somethig happend")
+      res.status(500).send({ message: err.message })
     }
+  } else {
+    res.end()
   }
 }
 export default handler

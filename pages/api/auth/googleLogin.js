@@ -1,4 +1,6 @@
-export default function handler(req, res) {
+import dbInit from "@/db/dbInit"
+
+function handler(req, res) {
   if (req.method === "POST") {
     const { username, password } = req.body
     try {
@@ -45,3 +47,5 @@ export default function handler(req, res) {
     res.send("get")
   }
 }
+
+export default dbInit(handler)

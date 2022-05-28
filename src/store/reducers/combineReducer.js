@@ -3,6 +3,7 @@ import filtersReducer, { filterState } from "./filtersReducer"
 import errorReducer from "./errorReducer"
 import productRrducer, { productState } from "./productsReducer"
 import cartReducer, { cardState } from "./cartReducer"
+import { combineReducers } from "redux"
 
 const reducers = {
   userState: authReducer,
@@ -19,15 +20,6 @@ const initialState = {
   cardState: { ...cardState },
 }
 
-const combineReducers = () => {
-  return (state, action) => {
-    return Object.keys(reducers).reduce((acc, prop) => {
-      return {
-        ...acc,
-        ...reducers[prop]({ [prop]: acc[prop] }, action),
-      }
-    }, state)
-  }
-}
+const combineReducer = combineReducers(reducers)
 
-export { combineReducers, initialState }
+export { combineReducer, initialState }

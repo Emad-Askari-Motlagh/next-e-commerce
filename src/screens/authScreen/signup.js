@@ -1,31 +1,27 @@
-import React, { useEffect, useState, useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import Link from "next/link";
-import styles from "./auth.module.scss";
-import { IoIosArrowRoundBack } from "react-icons/io";
-import { motion } from "framer-motion";
-import { useRouter } from "next/router";
-import { FcGoogle } from "react-icons/fc";
-import { ImFacebook2 } from "react-icons/im";
-import {
-  googleAuth,
-  facebookAuth,
-  setUser,
-} from "@/actions/authActions";
-import * as yup from "yup";
-import { Alert } from "react-bootstrap";
-import { useFormik, ErrorMessage } from "formik";
-import Header_animations from "@/components/Framer-Helpers/Header_animations";
-import Input from "@/components/Input";
+import React, { useEffect, useState, useCallback } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import Link from "next/link"
+import styles from "./auth.module.scss"
+import { IoIosArrowRoundBack } from "react-icons/io"
+import { motion } from "framer-motion"
+import { useRouter } from "next/router"
+import { FcGoogle } from "react-icons/fc"
+import { ImFacebook2 } from "react-icons/im"
+import { setUser } from "@/actions/authActions"
+import * as yup from "yup"
+import { Alert } from "react-bootstrap"
+import { useFormik, ErrorMessage } from "formik"
+import Header_animations from "@/components/Framer-Helpers/Header_animations"
+import Input from "@/components/Input"
 
 export default function signup() {
-  const [error, setError] = useState(null);
-  const dispatch = useDispatch();
-  const { signupError } = useSelector((state) => state.errorState);
-  const router = useRouter();
-  const [loginSuccesed, setLoginSuccesed] = useState(null);
-  const loginWithGoogle = dispatch(googleAuth);
-  const loginWithFacebook = dispatch(facebookAuth);
+  const [error, setError] = useState(null)
+  const dispatch = useDispatch()
+  const { signupError } = useSelector((state) => state.errorState)
+  const router = useRouter()
+  const [loginSuccesed, setLoginSuccesed] = useState(null)
+  // const loginWithGoogle = dispatch(googleAuth);
+  // const loginWithFacebook = dispatch(facebookAuth);
 
   const { handleChange, handleSubmit, values, touched, errors } = useFormik({
     initialValues: {
@@ -47,9 +43,17 @@ export default function signup() {
       name: yup.string().required("Please enter a name"),
     }),
     onSubmit: ({ email, password, name }) => {
-      dispatch(setUser(email, password, name));
+      try {
+        dispatch(setUser(email, password, name))
+        router.push("/")
+      } catch (err) {
+        if (err && err.type === "duplicate") {
+          router.push("/auth/login")
+        }
+        console.log(err)
+      }
     },
-  });
+  })
 
   return (
     <motion.div
@@ -129,17 +133,11 @@ export default function signup() {
         </Link>
       </div>
       <div className={styles.login_alternatives_container}>
-        <span
-          onClick={() => dispatch(loginWithGoogle())}
-          className={styles.auth_buttons}
-        >
+        <span onClick={() => null} className={styles.auth_buttons}>
           <FcGoogle style={{ marginRight: "4%" }} icon="google"></FcGoogle>
           Signup With Google
         </span>
-        <span
-          onClick={() => dispatch(loginWithFacebook())}
-          className={styles.auth_buttons}
-        >
+        <span onClick={() => null} className={styles.auth_buttons}>
           <ImFacebook2
             style={{ marginRight: "4%" }}
             color="blue"
@@ -167,5 +165,5 @@ export default function signup() {
         </a>
       </Link>
     </motion.div>
-  );
+  )
 }

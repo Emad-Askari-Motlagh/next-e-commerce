@@ -1,9 +1,8 @@
 import User from "src/models/userModel"
-import jwt from "jsonwebtoken"
 import bcrypt from "bcrypt"
-import dbInit from "src/utils/db/dbInit"
 import { authenticateUser, clearUser } from "src/utils/auth"
-import nookies, { destroyCookie, setCookie } from "nookies"
+import { deleteCookie } from "lib/storeCookie"
+import dbInit from "@/db/dbInit"
 
 const handler = async (req, res) => {
   const method = "POST"
@@ -17,26 +16,32 @@ const handler = async (req, res) => {
         })
 
         //if no user found
-        if (!existingUser) res.send({ err: `No account with this email found` })
+        if (!existingUser) {
+          res.status(401).send({
+            err: `No account with this email found`,
+          })
+        }
+
         // return res.json({ msg: `No account with this email found` })
         const doesPasswordMatch = bcrypt.compareSync(
           password,
           existingUser.password
         )
+
         //if the passwords do not match
         if (doesPasswordMatch && existingUser) {
           // Set
-          authenticateUser(res, existingUser)
+          await authenticateUser(res, existingUser)
+          res.end()
         } else {
-          res.send({ message: err.message })
+          res.status(401).send({ message: err.message })
         }
       } catch (err) {
-        res.send({ message: err.message })
+        res.status(401).send({ message: err.message })
       }
 
     case "DELETE":
-      destroyCookie({ res }, "token")
-      res.end()
+      await deleteCookie("token", res)
   }
 }
 export default dbInit(handler)

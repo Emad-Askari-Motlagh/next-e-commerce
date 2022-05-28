@@ -2,6 +2,8 @@ import User from "src/models/userModel"
 import jwt from "jsonwebtoken"
 import nookies, { destroyCookie, setCookie } from "nookies"
 import { serialize } from "cookie"
+import { deleteCookie, storeCookie } from "lib/storeCookie"
+import storeJwt from "lib/storeJwt"
 
 // You should really not use the fallback and perhaps
 // throw an error if this value is not set!
@@ -13,34 +15,18 @@ const cookieOptions = {
   secure: process.env.NODE_ENV === "production",
 }
 
-export function authenticateUser(res, user) {
+export async function authenticateUser(res, user) {
   if (!user) return
-
-  const token = jwt.sign({ email: user.email, id: user._id }, "MY_SECRET", {
-    expiresIn: "1d",
-  })
-  nookies.set({ res }, "token", token, cookieOptions)
-  console.log("new token", token)
-  // res?.cookie("token", token, { httpOnly: true })
-  res.setHeader("Set-Cookie", serialize("token", token, cookieOptions))
-
+  const token = jwt.sign({ id: user._id }, "MY_SECRET")
+  //store the cookie object which include the id and expiration time for future uses
+  await storeCookie({ token }, res, 300 * 300 * 300)
   return token
 }
 
 // This removes the auth cookie, effectively logging out
 // the user.
 export function clearUser(res) {
-  res.setHeader(
-    "Set-Cookie",
-    serialize("token", null, {
-      httpOnly: true,
-      maxAge: -1,
-      path: "/",
-      sameSite: "Strict",
-      secure: process.env.NODE_ENV === "production",
-    })
-  )
-
+  deleteCookie("token", res)
   return "done"
 }
 
@@ -48,18 +34,19 @@ export function clearUser(res) {
 // either on API routes or getServerSideProps
 export async function userFromRequest(req) {
   const { token } = req.cookies
-
   try {
-    if (!token) return undefined
+    if (!token) return
     const data = jwt.verify(token, "MY_SECRET")
     if (!data) {
-      return undefined
+      return
     }
+
     const user = await User.findById(data.id)
+
     return user
   } catch (error) {
     console.log(error?.message)
 
-    return undefined
+    return
   }
 }

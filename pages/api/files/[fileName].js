@@ -18,24 +18,24 @@ const handler = async (req, res) => {
 
   switch (method) {
     case "GET":
-      try {
-        // const files = await Image.find({});
-        const filename = req.params.filename
-        const [files] = await bucket.getFiles({
-          prefix: filename,
-        })
+    // try {
+    //   // const files = await Image.find({});
+    //   const filename = req.params.filename
+    //   const [files] = await bucket.getFiles({
+    //     prefix: filename,
+    //   })
 
-        res.status(200).json({
-          status: "success",
-          files: files,
-          bucket,
-        })
-      } catch (error) {
-        res.status(406).json({
-          status: "Fail",
-          error,
-        })
-      }
+    //   res.status(200).json({
+    //     status: "success",
+    //     files: files,
+    //     bucket,
+    //   })
+    // } catch (error) {
+    //   res.status(406).json({
+    //     status: "Fail",
+    //     error,
+    //   })
+    // }
     case "DELETE":
       try {
         await gfs.files.deleteOne({ filename: req.params.filename })

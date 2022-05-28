@@ -20,7 +20,12 @@ const {
   PRODUCT_SEARCH_HISTORY,
 } = actionTypes.default
 
-export const productState = { products: [], suggestionList: [], historys: [] }
+export const productState = {
+  products: [],
+  suggestionList: [],
+  historys: [],
+  loading: false,
+}
 export default function productReducer(state = productState, action) {
   switch (action.type) {
     case PRODUCT_LIST_REQUEST:

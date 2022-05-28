@@ -11,42 +11,38 @@ export const userState = {
 }
 
 export const userReducer = (state = userState, action) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      switch (action.type) {
-        case actionTypes.REGISTER_USER:
-          resolve({ ...state, createdUser: action.payload })
+  switch (action.type) {
+    case actionTypes.REGISTER_USER:
+      return { ...state, createdUser: action.payload }
 
-        case actionTypes.SIGN_USER:
-          resolve({
-            ...state,
-            currentUser: action.payload,
-          })
-        case actionTypes.GET_CURRENT_USER:
-          resolve({
-            ...state,
-            currentUser: action.payload,
-          })
-        case actionTypes.SIGN_USER_ERROR:
-          resolve({
-            ...state,
-            signInError: action.payload,
-          })
-        case "TOKEN_ERROR":
-          resolve({
-            ...state,
-            ifLogedIn: false,
-          })
-
-        case "GET_ADDRESSESS":
-          resolve({
-            ...state,
-            addressess: action.payload,
-          })
-        default:
-          resolve({ ...state })
+    case actionTypes.SIGN_USER:
+      return {
+        ...state,
+        currentUser: action.payload,
       }
-    }, 1000)
-  })
+    case actionTypes.GET_CURRENT_USER:
+      return {
+        ...state,
+        currentUser: action.payload,
+      }
+    case actionTypes.SIGN_USER_ERROR:
+      return {
+        ...state,
+        signInError: action.payload,
+      }
+    case "TOKEN_ERROR":
+      return {
+        ...state,
+        ifLogedIn: false,
+      }
+
+    case "GET_ADDRESSESS":
+      return {
+        ...state,
+        addressess: action.payload,
+      }
+    default:
+      return { ...state }
+  }
 }
 export default userReducer

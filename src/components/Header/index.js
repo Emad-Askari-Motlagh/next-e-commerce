@@ -38,7 +38,7 @@ export default function HeaderScreen(props) {
         />
         <NavItem
           onClick={() => Router.push("/auth/login")}
-          header_label={!user ? "Login" : "Basket"}
+          header_label={!user.user ? "Login" : "Basket"}
           icon={
             !user?.user ? (
               <LogIn className={styles.navItemIcon} />

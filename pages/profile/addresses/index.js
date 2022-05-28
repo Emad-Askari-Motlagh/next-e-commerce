@@ -1,10 +1,8 @@
-import { initializeStore } from "@/store/store";
-import React from "react";
-import AddressScreen from "@/screens/adressScreen";
-import nookies from "nookies";
+import React from "react"
+import AddressScreen from "@/screens/adressScreen"
 
 export default function index({ mydata }) {
-  return <AddressScreen mydata={mydata} />;
+  return <AddressScreen mydata={mydata} />
 }
 
 // export async function getServerSideProps(ctx) {

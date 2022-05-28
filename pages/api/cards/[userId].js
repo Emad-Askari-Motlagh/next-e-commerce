@@ -2,7 +2,7 @@ import Cart from "src/models/cartModel"
 import { Error } from "@material-ui/icons"
 import Product from "src/models/productModel"
 import mongoose from "mongoose"
-import dbInit from "@/db/dbInit.js"
+import dbInit from "lib/db/dbInit.js"
 
 const handler = async (req, res) => {
   const method = req.method

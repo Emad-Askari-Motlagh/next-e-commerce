@@ -1,4 +1,4 @@
-import dbInit from "src/utils/db/dbInit"
+import dbInit from "lib/db/dbInit"
 import { userFromRequest } from "src/utils/auth"
 
 const handler = async (req, res) => {

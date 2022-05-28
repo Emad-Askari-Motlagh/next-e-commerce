@@ -1,4 +1,4 @@
-import dbInit from "@/db/dbInit.js"
+import dbInit from "lib/db/dbInit.js"
 import Order from "../models/orderModel.js"
 
 const handler = async (req, res) => {

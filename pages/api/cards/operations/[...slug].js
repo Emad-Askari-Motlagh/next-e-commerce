@@ -1,4 +1,4 @@
-import dbInit from "@/db/dbInit"
+import dbInit from "lib/db/dbInit"
 
 const handler = async (req, res) => {
   const user = await req.params.userId

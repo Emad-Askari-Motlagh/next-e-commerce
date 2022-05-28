@@ -6,7 +6,7 @@
       "@/actions/*": ["src/store/actions/*"],
       "@/components/*": ["src/components/*"],
       "@/screens/*": ["src/screens/*"],
-      "@/db/*": ["src/utils/db/*"],
+      "@/db/*": ["lib/db/*"],
       "@/store/*": ["src/store/*"],
       "@/public/*": ["public/*"],
       "@/hooks/*": ["hooks/*"],

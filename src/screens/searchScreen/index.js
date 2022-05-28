@@ -8,13 +8,12 @@ import { useRouter } from "next/router"
 import { useDispatch, useSelector } from "react-redux"
 import SearchSuggestions from "@/components/Search-Suggestion"
 import SearchHeaders from "@/components/Search-Headers"
-import useAuth from "src/hooks/useAuth"
+
 import useFilter from "src/hooks/filter.hook"
 import useProduct from "src/hooks/product.hook"
 import SearchHistory from "@/components/Search-History"
 
 export default function SearchPage({ data }) {
-  const { user } = useAuth()
   const {
     products,
     loading,
