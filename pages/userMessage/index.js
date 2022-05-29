@@ -10,7 +10,7 @@ import {
   FormText,
 } from "react-bootstrap"
 import { useSelector } from "react-redux"
-import io from "socket.io-client"
+import { io } from "socket.io-client"
 import styles from "./userMessage.module.scss"
 
 export default function UserMessage() {
@@ -21,22 +21,30 @@ export default function UserMessage() {
   const [gotMessage, setGotMessage] = useState([])
   const [currentUser, setUser] = useState()
   var s = new Date(1504095567183).toLocaleDateString("en-US")
+
+  let socket
   useEffect(() => {
     getMessages()
   }, [])
   useEffect(() => {
-    socket = io(connection_url, { transport: ["websocket"] })
-
+    socket = io("http://localhost:3000", {
+      transport: ["websocket"],
+      path: "/api/socket",
+    })
+    socket.on("connect", () => {
+      console.log("here")
+    })
     socket.on("on-text-change", (data) => {
       setMesssetGotMessageages((prev) => [...prev, data])
     })
   }, [])
   const save_on_db = async (e) => {
     e.preventDefault()
-    socket.emit("onTextChange", {
-      text,
-      from: socket.id,
-    })
+
+    // socket.emit("onTextChange", {
+    //   text,
+    //   from: socket.id,
+    // })
   }
   const getMessages = async () => {}
   const buttonTriggers = ["Enter"]

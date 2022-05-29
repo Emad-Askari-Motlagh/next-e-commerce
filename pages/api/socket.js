@@ -1,19 +1,14 @@
-const io = require("socket.io")(server, { cors: { origin: "*" } })
+import { Server } from "socket.io"
 
 const SocketHandler = (req, res) => {
-  // events will go here...
-  io.on("connection", (socket) => {
-    console.log("New User connected")
-
-    socket.on("onTextChange", (data) => {
-      // console.log(`Message from client: ${data.text}, whoose id is: ${data.from}`);
-      io.emit("on-text-change", data)
-    })
-
-    socket.on("disconnect", () => {
-      console.log("User disconnected")
-    })
-  })
+  if (res.socket.server.io) {
+    console.log("Socket is already running")
+  } else {
+    console.log("Socket is initializing")
+    const io = new Server(res.socket.server)
+    res.socket.server.io = io
+  }
+  res.end()
 }
 
 export default SocketHandler
